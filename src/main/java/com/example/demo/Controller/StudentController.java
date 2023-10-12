@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.Controller;
 
 import com.example.demo.model.StudentModel;
 import com.example.demo.service.StudentService;
@@ -12,22 +12,19 @@ import java.util.List;
 public class StudentController {
     @Autowired
     private StudentService studentService;
-
     @PostMapping("/add")
     public String addStudent(@RequestBody StudentModel studentModel){
         studentService.addStudent(studentModel);
         return "Student added";
     }
-    @GetMapping("/getStudents")
+    @GetMapping("/getAllStudents")
     public List<StudentModel> getAllStudents(){
-        return studentService.listStudents();
+        return studentService.studentList();
     }
-
-    @DeleteMapping("/delete/{sid}")
-    public String deleteStudent(@PathVariable Integer sid){
-        studentService.deleteStudentById(sid);
+    @DeleteMapping("delete/{id}")
+    public String deleteStudent(@PathVariable Integer id){
+        studentService.deleteStudentByID(id);
         return "Student deleted";
     }
-
 
 }

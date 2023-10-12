@@ -6,24 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Service
 public class StudentServiceImpl implements StudentService{
-
     @Autowired
     private StudentRepository studentRepository;
+
     @Override
     public StudentModel addStudent(StudentModel studentModel) {
         return studentRepository.save(studentModel);
     }
 
     @Override
-    public List<StudentModel> listStudents() {
-        return (List<StudentModel>) studentRepository.findAll();
+    public List<StudentModel> studentList() {
+        return studentRepository.findAll();
     }
 
     @Override
-    public void deleteStudentById(int sid) {
-        studentRepository.deleteById(sid);
+    public void deleteStudentByID(int id) {
+        studentRepository.deleteById(id);
     }
 }
