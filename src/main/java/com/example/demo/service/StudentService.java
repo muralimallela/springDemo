@@ -9,5 +9,5 @@ import java.util.List;
 public interface StudentService {
     public StudentModel addStudent(StudentModel studentModel);
     public List<StudentModel> studentList();
-    public void deleteStudentByID(int id);
+    public void deleteStudentByID(String id);
 }

@@ -14,13 +14,20 @@ import lombok.Setter;
 @Table(name = "StudentDetails")
 public class StudentModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "StudentID")
-    private int sid;
+    @Column(name = "RollNumber")
+    private String rollNumber;
     @Column(name = "FirstName")
     private String firstName;
     @Column(name = "LastName")
     private String lastName;
-    @Column(name = "RollNumber")
-    private String rollNumber;
+    @Column(name = "Email")
+    private String email;
+    @Column(name = "Department")
+    private String department;
+    @Column(name = "Year")
+    private  int year;
+    @Column(name = "Batch")
+    private String batch;
+    @Column(name = "ContactNumber")
+    private long contactNumber;
 }

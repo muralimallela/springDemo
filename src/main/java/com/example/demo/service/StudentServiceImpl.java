@@ -22,7 +22,7 @@ public class StudentServiceImpl implements StudentService{
     }
 
     @Override
-    public void deleteStudentByID(int id) {
+    public void deleteStudentByID(String id) {
         studentRepository.deleteById(id);
     }
 }

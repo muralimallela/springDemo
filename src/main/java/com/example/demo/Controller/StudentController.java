@@ -22,7 +22,7 @@ public class StudentController {
         return studentService.studentList();
     }
     @DeleteMapping("delete/{id}")
-    public String deleteStudent(@PathVariable Integer id){
+    public String deleteStudent(@PathVariable String id){
         studentService.deleteStudentByID(id);
         return "Student deleted";
     }
