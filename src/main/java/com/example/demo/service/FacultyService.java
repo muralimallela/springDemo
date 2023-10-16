@@ -9,4 +9,5 @@ public interface FacultyService {
     public FacultyModel addFaculty(FacultyModel facultyModel);
     public List<FacultyModel> facultyLIst();
     public void deleteFacultyByID(int id);
+    public FacultyModel updateFaculty(int id,FacultyModel facultyModel);
 }

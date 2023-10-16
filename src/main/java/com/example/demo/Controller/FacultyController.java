@@ -1,9 +1,7 @@
 package com.example.demo.Controller;
 
 import com.example.demo.model.FacultyModel;
-import com.example.demo.model.StudentModel;
 import com.example.demo.service.FacultyService;
-import com.example.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,5 +25,9 @@ public class FacultyController {
     public String deleteStudent(@PathVariable int id){
         facultyService.deleteFacultyByID(id);
         return "Faculty deleted";
+    }
+    @PutMapping("update/{id}")
+    public FacultyModel updateFaculty(@PathVariable int id,@RequestBody FacultyModel facultyModel){
+        return facultyService.updateFaculty(id,facultyModel);
     }
 }

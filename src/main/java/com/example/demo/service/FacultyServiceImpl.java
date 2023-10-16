@@ -26,4 +26,15 @@ public class FacultyServiceImpl implements FacultyService{
     public void deleteFacultyByID(int id) {
         facultyRepository.deleteById(id);
     }
+
+    @Override
+    public FacultyModel updateFaculty(int id, FacultyModel facultyModel) {
+        FacultyModel faculty = facultyRepository.findById(id).orElseThrow(()->new RuntimeException());
+        faculty.setFirstName(facultyModel.getFirstName());
+        faculty.setLastName(facultyModel.getLastName());
+        faculty.setEmail(facultyModel.getEmail());
+        faculty.setDepartment(facultyModel.getDepartment());
+        faculty.setContactNumber(facultyModel.getContactNumber());
+        return facultyRepository.save(faculty);
+    }
 }
